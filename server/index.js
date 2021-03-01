@@ -19,7 +19,6 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 
 
-
 //mongoose를 이용해서 app과 mongoDB연결 - 비밀정보 부분(mongoDB id/pw)
 const mongoose = require('mongoose')
 mongoose.connect(config.mongoURI,{
@@ -29,12 +28,14 @@ mongoose.connect(config.mongoURI,{
   .catch(err => console.log(err)) //에러 확인
 
 app.get('/', (req, res) => {
-    //서버에 출력
-    res.send('Hello World! Welcome here!')
+  //서버에 출력
+  res.send('Hello World! Welcome here!')
 })
 
-
-
+app.get('/api/hello', (req, res) => {
+  res.send('안녕하세요 ! ')
+})
+ 
 //회원가입
 app.post('/api/users/register',(req, res) =>{
   //회원가입할때 필요한 정보들을 client에서 가져오면

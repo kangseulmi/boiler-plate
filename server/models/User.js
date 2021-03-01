@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;//자릿수
-const jwt = require('jasonwebtoken');
+const jwt = require('jsonwebtoken');
 
 const userSchema = mongoose.Schema({
     name:{
